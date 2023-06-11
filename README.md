@@ -45,7 +45,7 @@ You can directly visualise the lamps trajectory in VMD. For a nicer visualisatio
 ```
 python render_traj.py dump_1.00.lammpstrj
 ```
-This script creates tcl snapshots in the default folder `./render_output` (which can be changes using `--output` switch). To see a tcl file in VMD you can start VMD and then run the `source filename.tcl`. 
+This script creates tcl snapshots in the default folder `./render_output` (which can be changed using `--output` switch). To see a tcl file in VMD you can start VMD and then run the `source filename.tcl`. 
 
 Alternatively, you can ask the `render_traj.py` to automatically render all snapshots in the trajectory by
 ```
