@@ -1,0 +1,42 @@
+# Simple rigid body system
+log log_${T} append
+units           lj
+atom_style      full
+
+pair_style hybrid  morse 1.0 lj/cut 1.00 lj/cut/coul/debye 1.2 1.0 2.0
+
+read_data       last_conf
+
+dielectric 4.0
+pair_coeff * * none
+pair_coeff 1 1 lj/cut 1 0.890899 1.00
+pair_coeff 2 2 lj/cut/coul/debye 0.1 0.119358 0.1339746 1.00
+pair_coeff 2 3 lj/cut/coul/debye 0.1 0.119358 0.1339746 1.00
+pair_coeff 3 3 lj/cut/coul/debye 0.1 0.119358 0.1339746 1.00
+pair_coeff 4 4 morse 15 7.0 0.1339746 1.0  #0.1339746 1.0
+
+pair_modify shift yes
+
+mass *  0.1
+mass 1  0.3333
+
+run 0
+velocity      all create  ${T} 492459 rot yes mom yes units box
+fix 1 all rigid molecule langevin $T $T 1 428984
+run 0
+neigh_modify exclude molecule/intra all
+comm_modify cutoff 3.5
+velocity all scale $T
+run 0
+
+
+dump            1 all custom 50000 dump_${T}.lammpstrj id type x y z
+dump_modify     1 append no sort id
+
+timestep        5e-3
+thermo          10000
+thermo_style    custom step temp epair emol etotal press
+run             1000000
+write_data last_conf_${T}
+
+

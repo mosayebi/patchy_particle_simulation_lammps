@@ -1,0 +1,4 @@
+LAMMPS (28 Mar 2023 - Update 1)
+# Simple rigid body system
+log log_${T} append
+log log_0.01 append

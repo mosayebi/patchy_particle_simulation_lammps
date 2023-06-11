@@ -1,0 +1,6 @@
+units           lj
+atom_style      full
+
+pair_style hybrid  morse 1.0 lj/cut 1.00 lj/cut/coul/debye 1.2 1.0 2.0
+ERROR: Unrecognized pair style 'lj/cut/coul/debye' is part of the EXTRA-PAIR package which is not enabled in this LAMMPS binary. (src/force.cpp:271)
+Last command: pair_style hybrid  morse 1.0 lj/cut 1.00 lj/cut/coul/debye 1.2 1.0 2.0
