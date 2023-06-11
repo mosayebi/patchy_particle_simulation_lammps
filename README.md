@@ -20,7 +20,7 @@ A successful installation will create the lammps executable in `./build/lmp`
 
 - `generate_init_conf.m` is MATLAB script to generate a lammps starting configuration
 - `in.rigid` the lammps input script for running the simulation. The pair-potential is hybrid LJ/morse potential.
-- `last_conf_0.1` a sample lammpsstarting configuration
+- `last_conf_0.1` a sample lammps starting configuration
 
 ```
 ~/lammps/build/lmp -in in.rigid -var T 0.01
