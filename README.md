@@ -23,6 +23,7 @@ A successful installation will create the lammps executable in `./build/lmp`
 - `last_conf_0.1` a sample lammps starting configuration
 
 ```
+cd hexagonal_sheet
 ~/lammps/build/lmp -in in.rigid -var T 0.01
 ```
 
