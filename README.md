@@ -14,7 +14,7 @@ make
 
 A successful installation will create the lammps executable in `./build/lmp`.
 
-We use the RIGID body package in lammps to define our patchy particles. A patchy particle is rigid body composed of multiple particles (or interaction centres). We can define desired pair potentials between any two pairs of particles in two different rigid bodies. In the second example (i.e SAGE), we also define a bond between two rigid bodies.
+We use the RIGID body package in lammps to define our patchy particles. A patchy particle is a rigid body composed of multiple particles (or interaction centres). We can define desired pair potentials between any two pairs of particles in two different rigid bodies. In the second example (i.e SAGE), we also define a bond between two rigid bodies.
 
 ## Examples
 
