@@ -12,15 +12,17 @@ cmake -C ../cmake/presets/clang.cmake  -D PKG_RIGID=yes -D PKG_MOLECULE=yes -D P
 make
 ```
 
-A successful installation will create the lammps executable in `./build/lmp`
+A successful installation will create the lammps executable in `./build/lmp`.
+
+We used the RIGID body package in lammps to define our patchy particles. A patchy particle is rigid body composed of multiple particles. We can define pair potentials between any two pairs of particles in two different rigid bodies. In the second example (i.e SAGE), we also define a bond between two rigid bodies.
 
 ## Examples
 
 ### Hexagonal sheet
 
-- `generate_init_conf.m` is MATLAB script to generate a lammps starting configuration
-- `in.rigid` the lammps input script for running the simulation. The pair-potential is hybrid LJ/morse potential.
-- `last_conf_0.1` a sample lammps starting configuration
+- `generate_init_conf.m` is a MATLAB script to generate a lammps starting configuration
+- `in.rigid` a lammps input script for defining the system and running the simulation. The pair-potential used for patchy particles is a hybrid LJ/morse potential.
+- `last_conf_0.1` a sample lammps starting configuration.
 
 ```
 cd hexagonal_sheet
@@ -42,11 +44,11 @@ In this example, the simulation box contains a single hub. A hub is made of 48 a
 <img src="./sage/hub.png" alt= “” width="300" height="300">
 
 #### Visualisation
-You can directly visualise the lamps trajectory in VMD. For a nicer visualisation you can use the `render_traj.py` script 
+You can directly visualise the lamps trajectory in VMD. For a nicer visualisation you can use the `render_traj.py` script.
 ```
 python render_traj.py dump_1.00.lammpstrj
 ```
-This script creates tcl snapshots in the default folder `./render_output` (which can be changed using `--output` switch). To see a tcl file in VMD you can start VMD and then run the `source filename.tcl`. 
+This script creates tcl snapshots in the default folder `./render_output` (which can be changed using `--output` switch). To see a tcl file in VMD you can start VMD and then run the command `source filename.tcl` in the VMD consul.
 
 Alternatively, you can ask the `render_traj.py` to automatically render all snapshots in the trajectory by
 ```
