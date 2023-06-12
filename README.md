@@ -8,7 +8,7 @@ git clone -b release --depth 1000 https://github.com/lammps/lammps.git lammps
 cd lammps
 mkdir build
 cd build
-cmake -C ../cmake/presets/clang.cmake  -D PKG_RIGID=yes PKG_MOLECULE=yes PKG_EXTRA-PAIR=yes ../cmake/
+cmake -C ../cmake/presets/clang.cmake  -D PKG_RIGID=yes -D PKG_MOLECULE=yes -D PKG_EXTRA-PAIR=yes ../cmake/
 make
 ```
 
@@ -58,7 +58,7 @@ Note that rendering can be quite slow for a large trajectory. The script uses th
 
 "/Applications/VMD 1.9.4a57-x86_64-Rev12.app/Contents/vmd/tachyon_MACOSXX86_64"
 ```
-If you installed VMD in a different folder, you'll need to pass the correct paths via `--vmd_path` and `--tachyon_path` switches.
+If you installed VMD in a different folder, you'd need to pass the correct paths via `--vmd_path` and `--tachyon_path` switches.
 
 After rendering all tga snapshots are created in the output folder. `ffmpeg` and `convert` can be used to convert the images to png or to make a movie
 
